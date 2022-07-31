@@ -11,6 +11,10 @@ const SocketHandler = (req, res) => {
                 socket.broadcast.emit('update-input', msg)
             })
 
+            socket.on('array-change', msg => {
+                socket.broadcast.emit('update-array', msg)
+            })
+
             socket.on('input2-change', msg => {
                 socket.broadcast.emit('update-input2', msg)
             })
